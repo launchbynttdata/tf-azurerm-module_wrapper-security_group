@@ -1,4 +1,4 @@
-# tf-azurerm-wrapper_module-security_group
+# tf-azurerm-module_collection-security_group
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -14,8 +14,8 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_nsg"></a> [nsg](#module\_nsg) | ../.. | n/a |
-| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | git::https://github.com/nexient-llc/tf-azurerm-module-resource_group.git | 0.2.0 |
-| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/nexient-llc/tf-module-resource_name.git | 1.0.0 |
+| <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | git::https://github.com/launchbynttdata/tf-azurerm-module_primitive-resource_group.git | 1.0.0 |
+| <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git | 1.0.0 |
 
 ## Resources
 
@@ -33,7 +33,7 @@ No resources.
 | <a name="input_source_address_prefix"></a> [source\_address\_prefix](#input\_source\_address\_prefix) | (Optional)Source address prefix to be applied to all predefined rules. list(string) only allowed one element (CIDR, `*`, source IP range or Tags). Example ["10.0.3.0/24"] or ["VirtualNetwork"] | `list(string)` | <pre>[<br>  "*"<br>]</pre> | no |
 | <a name="input_source_address_prefixes"></a> [source\_address\_prefixes](#input\_source\_address\_prefixes) | (Optional)Source address prefix to be applied to all predefined rules. Example ["10.0.3.0/32","10.0.3.128/32"] | `list(string)` | `null` | no |
 | <a name="input_use_for_each"></a> [use\_for\_each](#input\_use\_for\_each) | (Optional)Choose wheter to use 'for\_each' as iteration technic to generate the rules, defaults to false so we will use 'count' for compatibilty with previous module versions, but prefered method is 'for\_each' | `bool` | `false` | no |
-| <a name="input_resource_names_map"></a> [resource\_names\_map](#input\_resource\_names\_map) | A map of key to resource\_name that will be used by tf-module-resource\_name to generate resource names | <pre>map(object({<br>    name       = string<br>    max_length = optional(number, 60)<br>  }))</pre> | <pre>{<br>  "network_security_group": {<br>    "max_length": 80,<br>    "name": "nsg"<br>  },<br>  "resource_group": {<br>    "max_length": 90,<br>    "name": "rg"<br>  }<br>}</pre> | no |
+| <a name="input_resource_names_map"></a> [resource\_names\_map](#input\_resource\_names\_map) | A map of key to resource\_name that will be used by tf-launch-module\_library-resource\_name to generate resource names | <pre>map(object({<br>    name       = string<br>    max_length = optional(number, 60)<br>  }))</pre> | <pre>{<br>  "network_security_group": {<br>    "max_length": 80,<br>    "name": "nsg"<br>  },<br>  "resource_group": {<br>    "max_length": 90,<br>    "name": "rg"<br>  }<br>}</pre> | no |
 | <a name="input_naming_prefix"></a> [naming\_prefix](#input\_naming\_prefix) | Prefix for the provisioned resources. | `string` | `"platform"` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment in which the resource should be provisioned like dev, qa, prod etc. | `string` | `"dev"` | no |
 | <a name="input_environment_number"></a> [environment\_number](#input\_environment\_number) | The environment count for the respective environment. Defaults to 000. Increments in value of 1 | `string` | `"001"` | no |
