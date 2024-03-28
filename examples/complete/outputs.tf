@@ -10,12 +10,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-# output "network_security_group_id" {
-#   value       = module.nsg.network_security_group_id
-#   description = "The id of newly created network security group"
-# }
+output "resource_group_name" {
+  value       = local.resource_group_name
+  description = "The name of newly created resource group"
+}
 
-# output "network_security_group_name" {
-#   value       = module.nsg.network_security_group_name
-#   description = "The name of newly created network security group"
-# }
+output "network_security_group_id" {
+  value       = module.nsg.network_security_group_id
+  description = "The ID of newly created network security group"
+}
+
+output "network_security_group_name" {
+  value       = module.nsg.network_security_group_name
+  description = "The name of newly created network security group"
+}
