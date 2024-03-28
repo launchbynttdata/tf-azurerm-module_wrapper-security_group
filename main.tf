@@ -18,7 +18,7 @@ module "nsg" {
 
   security_group_name = var.security_group_name
   location            = var.location
-  tags                = var.tags
+  tags                = local.tags
 
   custom_rules                 = var.custom_rules
   destination_address_prefix   = var.destination_address_prefix
